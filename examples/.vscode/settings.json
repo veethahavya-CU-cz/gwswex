@@ -1,0 +1,20 @@
+{
+  "python.defaultInterpreterPath": "../.pixi/envs/default/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder:gwswex-root}/gwswex",
+    "${workspaceFolder:gwswex-root}/build"
+  ],
+
+  "files.exclude": {
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/.ipynb_checkpoints": true,
+    ".vscode": true
+  },
+  "search.exclude": {
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+  }
+}

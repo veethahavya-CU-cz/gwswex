@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "$(trash) Clean",
+      "type": "shell",
+      "command": "pixi run clean",
+      "problemMatcher": []
+    },
+    {
+      "label": "$(tools) Build",
+      "type": "shell",
+      "command": "pixi run build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "$(zap) Quick Build",
+      "type": "shell",
+      "command": "pixi run quick-build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "$(beaker) Test",
+      "type": "shell",
+      "command": "pixi run test",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "$(package) Install",
+      "type": "shell",
+      "command": "pixi run install",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "$(debug) Debug Build",
+      "type": "shell",
+      "command": "pixi run debug-build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

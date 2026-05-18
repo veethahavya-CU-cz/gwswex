@@ -1,0 +1,1213 @@
+{
+  "loam": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.5
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.4
+        },
+        "baseline_rmse": 0.627516225027159,
+        "final_rmse": 0.627516225027159,
+        "baseline_metrics": {
+          "overall": 0.627516225027159,
+          "wet": 0.730113460671994,
+          "dry": 0.5657888257429852,
+          "dry_cool": 0.5657888257429852
+        },
+        "final_metrics": {
+          "overall": 0.627516225027159,
+          "wet": 0.730113460671994,
+          "dry": 0.5657888257429852,
+          "dry_cool": 0.5657888257429852
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 2%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.5,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 1.9840839101009093,
+        "final_rmse": 1.5566486614786608,
+        "baseline_metrics": {
+          "overall": 1.9840839101009093,
+          "wet": 2.3462345540925416,
+          "dry": 1.7390973239619696,
+          "dry_cool": 1.7390973239619696
+        },
+        "final_metrics": {
+          "overall": 1.5566486614786608,
+          "wet": 1.5252388115600262,
+          "dry": 1.709916914402019,
+          "dry_cool": 1.709916914402019
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.1,
+            1.6420252842708054,
+            "wet"
+          ],
+          [
+            "s_e",
+            0.6,
+            1.7395211731000302,
+            "dry"
+          ],
+          [
+            "ICratio_min",
+            0.05,
+            1.5252388115600262,
+            "wet"
+          ]
+        ],
+        "note": "accepted: net 21.54% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.1
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 16.449067305243528,
+        "final_rmse": 16.449067305243528,
+        "baseline_metrics": {
+          "overall": 16.449067305243528,
+          "wet": 1.207895173594291,
+          "dry": 26.103424106078215,
+          "dry_cool": 21.32913497801082
+        },
+        "final_metrics": {
+          "overall": 16.449067305243528,
+          "wet": 1.207895173594291,
+          "dry": 26.103424106078215,
+          "dry_cool": 21.32913497801082
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.1
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 15.997255003858664,
+        "final_rmse": 16.193766610101466,
+        "baseline_metrics": {
+          "overall": 15.997255003858664,
+          "wet": 4.266981056200411,
+          "dry": 24.822446317335096,
+          "dry_cool": 20.52869377203228
+        },
+        "final_metrics": {
+          "overall": 16.193766610101466,
+          "wet": 2.7151486209685105,
+          "dry": 25.521653410465323,
+          "dry_cool": 20.923291157512175
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.5,
+            2.7151486209685105,
+            "wet"
+          ]
+        ],
+        "note": "net improvement -1.23% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "sand": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-05,
+          "picard_max_iter": 150,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.2
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.02,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 1.3869043725798653,
+        "final_rmse": 0.4183921261957637,
+        "baseline_metrics": {
+          "overall": 1.3869043725798653,
+          "wet": 0.6737630338081594,
+          "dry": 1.927079346597535,
+          "dry_cool": 1.927079346597535
+        },
+        "final_metrics": {
+          "overall": 0.4183921261957637,
+          "wet": 0.313607876939559,
+          "dry": 0.5300277073799583,
+          "dry_cool": 0.5300277073799583
+        },
+        "accepted": [
+          [
+            "picard_tol",
+            1e-05,
+            0.6407952372707989,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.3,
+            0.7673025872085636,
+            "dry"
+          ],
+          [
+            "s_h",
+            0.02,
+            0.5300277073799583,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 69.83% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.1
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.02,
+          "s_e": 0.2
+        },
+        "baseline_rmse": 0.732593788649883,
+        "final_rmse": 0.2947760671775229,
+        "baseline_metrics": {
+          "overall": 0.732593788649883,
+          "wet": 0.2112208140372173,
+          "dry": 1.05746017856417,
+          "dry_cool": 1.05746017856417
+        },
+        "final_metrics": {
+          "overall": 0.2947760671775229,
+          "wet": 0.12969102142414887,
+          "dry": 0.4140631032665157,
+          "dry_cool": 0.4140631032665157
+        },
+        "accepted": [
+          [
+            "courant_number",
+            0.3,
+            0.6608161671305333,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.3,
+            0.9178068165184092,
+            "dry"
+          ],
+          [
+            "s_h",
+            0.02,
+            0.8378853626428123,
+            "dry"
+          ],
+          [
+            "s_e",
+            0.2,
+            0.41282744750111006,
+            "dry"
+          ],
+          [
+            "ICratio_min",
+            0.1,
+            0.12969102142414887,
+            "wet"
+          ]
+        ],
+        "note": "accepted: net 59.76% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.2
+        },
+        "baseline_rmse": 12.317654021616303,
+        "final_rmse": 11.489347000505466,
+        "baseline_metrics": {
+          "overall": 12.317654021616303,
+          "wet": 1.9095194882662483,
+          "dry": 19.611211015580153,
+          "dry_cool": 15.925359737024207
+        },
+        "final_metrics": {
+          "overall": 11.489347000505466,
+          "wet": 1.9045609072539027,
+          "dry": 18.621575368134753,
+          "dry_cool": 14.84638800914281
+        },
+        "accepted": [
+          [
+            "s_e",
+            0.2,
+            18.621575368134753,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 6.72% >= 5%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.9,
+          "n_trapz": 20,
+          "beta_hyst": 0.85
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 12.482071755872122,
+        "final_rmse": 12.482071755872122,
+        "baseline_metrics": {
+          "overall": 12.482071755872122,
+          "wet": 2.6492447089179545,
+          "dry": 19.774290281403108,
+          "dry_cool": 16.084452635227073
+        },
+        "final_metrics": {
+          "overall": 12.482071755872122,
+          "wet": 2.6492447089179545,
+          "dry": 19.774290281403108,
+          "dry_cool": 16.084452635227073
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "clay": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.42
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.8558193786767041,
+        "final_rmse": 0.8558193786767041,
+        "baseline_metrics": {
+          "overall": 0.8558193786767041,
+          "wet": 0.6736536944055008,
+          "dry": 1.0644789583034242,
+          "dry_cool": 1.0644789583034242
+        },
+        "final_metrics": {
+          "overall": 0.8558193786767041,
+          "wet": 0.6736536944055008,
+          "dry": 1.0644789583034242,
+          "dry_cool": 1.0644789583034242
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 2%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.6
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 4.448533632766219,
+        "final_rmse": 3.964918750227489,
+        "baseline_metrics": {
+          "overall": 4.448533632766219,
+          "wet": 3.589605025291916,
+          "dry": 5.476484332100796,
+          "dry_cool": 5.476484332100796
+        },
+        "final_metrics": {
+          "overall": 3.964918750227489,
+          "wet": 3.2074121662583805,
+          "dry": 4.8758348382815075,
+          "dry_cool": 4.8758348382815075
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            3.2074121662583805,
+            "wet"
+          ]
+        ],
+        "note": "accepted: net 10.87% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 40.10306408650317,
+        "final_rmse": 37.587932526150475,
+        "baseline_metrics": {
+          "overall": 40.10306408650317,
+          "wet": 11.235258781415185,
+          "dry": 55.0382860113667,
+          "dry_cool": 51.40237224363139
+        },
+        "final_metrics": {
+          "overall": 37.587932526150475,
+          "wet": 10.663983100356042,
+          "dry": 51.680961738632234,
+          "dry_cool": 48.163143877563805
+        },
+        "accepted": [
+          [
+            "picard_tol",
+            1e-07,
+            37.587932526150475,
+            "overall"
+          ]
+        ],
+        "note": "accepted: net 6.27% >= 5%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 40,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 41.650898908452824,
+        "final_rmse": 40.03063356688275,
+        "baseline_metrics": {
+          "overall": 41.650898908452824,
+          "wet": 18.591208494318746,
+          "dry": 64.75302121056106,
+          "dry_cool": 52.34359450251804
+        },
+        "final_metrics": {
+          "overall": 40.03063356688275,
+          "wet": 15.199614095617127,
+          "dry": 63.213487990039624,
+          "dry_cool": 50.76684023110301
+        },
+        "accepted": [
+          [
+            "courant_number",
+            0.85,
+            36.12823995101007,
+            "overall"
+          ],
+          [
+            "s_w",
+            0.15,
+            49.02583393465232,
+            "dry"
+          ],
+          [
+            "ICratio_min",
+            0.6,
+            15.199614095617127,
+            "wet"
+          ]
+        ],
+        "note": "net improvement 3.89% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "sand-loam": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-05,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.3
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.8875415867298033,
+        "final_rmse": 0.11401465494403569,
+        "baseline_metrics": {
+          "overall": 0.8875415867298033,
+          "wet": 0.48047959639536575,
+          "dry": 1.2148612424854413,
+          "dry_cool": 1.2148612424854413
+        },
+        "final_metrics": {
+          "overall": 0.11401465494403569,
+          "wet": 0.1550843262556728,
+          "dry": 0.06414118612488384,
+          "dry_cool": 0.06414118612488384
+        },
+        "accepted": [
+          [
+            "picard_tol",
+            1e-05,
+            0.13418776052225606,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.3,
+            0.06414118612488384,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 87.15% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.3
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.05,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.5780480329863109,
+        "final_rmse": 0.577214058612798,
+        "baseline_metrics": {
+          "overall": 0.5780480329863109,
+          "wet": 0.7942019777980281,
+          "dry": 0.3053067256824581,
+          "dry_cool": 0.3053067256824581
+        },
+        "final_metrics": {
+          "overall": 0.577214058612798,
+          "wet": 0.8232748176487428,
+          "dry": 0.21000013918088165,
+          "dry_cool": 0.21000013918088165
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            0.5730160790589686,
+            "wet"
+          ],
+          [
+            "n_trapz",
+            30,
+            0.4733803576641926,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.3,
+            0.24039383032547273,
+            "dry"
+          ],
+          [
+            "s_h",
+            0.02,
+            0.21000013918088165,
+            "dry"
+          ]
+        ],
+        "note": "net improvement 0.14% < threshold 2%; reverting to baseline"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 18.999528327003542,
+        "final_rmse": 18.999528327003542,
+        "baseline_metrics": {
+          "overall": 18.999528327003542,
+          "wet": 5.582337846482739,
+          "dry": 19.378867561034113,
+          "dry_cool": 24.32218122839703
+        },
+        "final_metrics": {
+          "overall": 18.999528327003542,
+          "wet": 5.582337846482739,
+          "dry": 19.378867561034113,
+          "dry_cool": 24.32218122839703
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 5,
+          "beta_hyst": 0.85
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 22.769045117583687,
+        "final_rmse": 22.769045117583687,
+        "baseline_metrics": {
+          "overall": 22.769045117583687,
+          "wet": 8.895962120649195,
+          "dry": 24.55804216401473,
+          "dry_cool": 28.835613833198583
+        },
+        "final_metrics": {
+          "overall": 22.769045117583687,
+          "wet": 8.895962120649195,
+          "dry": 24.55804216401473,
+          "dry_cool": 28.835613833198583
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "sand-clay": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-05,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.05,
+          "s_h": 0.08,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.42949460854690547,
+        "final_rmse": 0.18513867574660314,
+        "baseline_metrics": {
+          "overall": 0.42949460854690547,
+          "wet": 0.1954950094431403,
+          "dry": 0.601185253162322,
+          "dry_cool": 0.601185253162322
+        },
+        "final_metrics": {
+          "overall": 0.18513867574660314,
+          "wet": 0.2508544281774234,
+          "dry": 0.10631996953166226,
+          "dry_cool": 0.10631996953166226
+        },
+        "accepted": [
+          [
+            "picard_tol",
+            1e-05,
+            0.19151182059566466,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.3,
+            0.12072899897422076,
+            "dry"
+          ],
+          [
+            "s_w",
+            0.05,
+            0.10927843853309994,
+            "dry"
+          ],
+          [
+            "s_star",
+            0.4,
+            0.10631996953166226,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 56.89% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.9,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.08,
+          "s_e": 0.2
+        },
+        "baseline_rmse": 0.39709275002649314,
+        "final_rmse": 0.34676402783660326,
+        "baseline_metrics": {
+          "overall": 0.39709275002649314,
+          "wet": 0.3129422212213121,
+          "dry": 0.4936389494811759,
+          "dry_cool": 0.4936389494811759
+        },
+        "final_metrics": {
+          "overall": 0.34676402783660326,
+          "wet": 0.43495130528097437,
+          "dry": 0.2670492948331533,
+          "dry_cool": 0.2670492948331533
+        },
+        "accepted": [
+          [
+            "s_star",
+            0.3,
+            0.4234835676715564,
+            "dry"
+          ],
+          [
+            "s_w",
+            0.15,
+            0.3488804671198171,
+            "dry"
+          ],
+          [
+            "s_e",
+            0.2,
+            0.30555958504450326,
+            "dry"
+          ],
+          [
+            "s_w",
+            0.05,
+            0.2670492948331533,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 12.67% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 0.0001,
+          "picard_max_iter": 300
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.02,
+          "s_e": 0.2
+        },
+        "baseline_rmse": 11.51090517451718,
+        "final_rmse": 11.51090517451718,
+        "baseline_metrics": {
+          "overall": 11.51090517451718,
+          "wet": 1.4983252932342648,
+          "dry": 17.393078593052188,
+          "dry_cool": 14.898923004403603
+        },
+        "final_metrics": {
+          "overall": 11.51090517451718,
+          "wet": 1.4983252932342648,
+          "dry": 17.393078593052188,
+          "dry_cool": 14.898923004403603
+        },
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.02,
+          "s_e": 0.2
+        },
+        "baseline_rmse": 11.176166115311288,
+        "final_rmse": 10.62216165695521,
+        "baseline_metrics": {
+          "overall": 11.176166115311288,
+          "wet": 9.090395703705463,
+          "dry": 15.695590669897248,
+          "dry_cool": 12.918084240983063
+        },
+        "final_metrics": {
+          "overall": 10.62216165695521,
+          "wet": 9.835659612957498,
+          "dry": 14.506972437411036,
+          "dry_cool": 11.794664682117103
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            6.130052184814669,
+            "wet"
+          ],
+          [
+            "s_star",
+            0.4,
+            14.097717032487264,
+            "dry"
+          ],
+          [
+            "ICratio_min",
+            0.3,
+            6.709500042233244,
+            "wet"
+          ],
+          [
+            "s_star",
+            0.3,
+            14.506972437411036,
+            "dry"
+          ]
+        ],
+        "note": "net improvement 4.96% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "loam-clay": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.3
+        },
+        "et_stress": {
+          "s_star": 0.6,
+          "s_w": 0.05,
+          "s_h": 0.08,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 0.3542088760278311,
+        "final_rmse": 0.3288234077774895,
+        "baseline_metrics": {
+          "overall": 0.3542088760278311,
+          "wet": 0.23581867319794467,
+          "dry": 0.46500329431927295,
+          "dry_cool": 0.46500329431927295
+        },
+        "final_metrics": {
+          "overall": 0.3288234077774895,
+          "wet": 0.23581867319794467,
+          "dry": 0.42268194420828614,
+          "dry_cool": 0.42268194420828614
+        },
+        "accepted": [
+          [
+            "s_star",
+            0.6,
+            0.42268194420828614,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 7.17% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.7,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.6
+        },
+        "et_stress": {
+          "s_star": 0.6,
+          "s_w": 0.05,
+          "s_h": 0.08,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 1.5609020047223958,
+        "final_rmse": 1.3853389436423629,
+        "baseline_metrics": {
+          "overall": 1.5609020047223958,
+          "wet": 0.7094535187024292,
+          "dry": 2.1853089071230323,
+          "dry_cool": 2.1853089071230323
+        },
+        "final_metrics": {
+          "overall": 1.3853389436423629,
+          "wet": 0.41839506046604213,
+          "dry": 1.995779099929962,
+          "dry_cool": 1.995779099929962
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            0.6451313181077927,
+            "wet"
+          ],
+          [
+            "courant_number",
+            0.5,
+            1.5875826015155847,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.7,
+            2.1276215814576713,
+            "dry"
+          ],
+          [
+            "s_w",
+            0.15,
+            2.0159976994546445,
+            "dry"
+          ],
+          [
+            "ICratio_min",
+            0.5,
+            0.5665489401699457,
+            "wet"
+          ],
+          [
+            "n_trapz",
+            10,
+            1.5124467971371136,
+            "overall"
+          ],
+          [
+            "s_w",
+            0.05,
+            1.8633530375978242,
+            "dry"
+          ],
+          [
+            "ICratio_min",
+            0.6,
+            0.48981449164578567,
+            "wet"
+          ],
+          [
+            "courant_number",
+            0.7,
+            1.4688377095832659,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.6,
+            1.995779099929962,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 11.25% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 0.0001,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.2
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 6.9094091215905955,
+        "final_rmse": 6.14260103694241,
+        "baseline_metrics": {
+          "overall": 6.9094091215905955,
+          "wet": 2.6603968128605016,
+          "dry": 10.45529205460449,
+          "dry_cool": 8.75665397850426
+        },
+        "final_metrics": {
+          "overall": 6.14260103694241,
+          "wet": 3.6661498961104213,
+          "dry": 9.252029458210519,
+          "dry_cool": 7.5149078831836045
+        },
+        "accepted": [
+          [
+            "picard_tol",
+            0.0001,
+            6.341630600834721,
+            "overall"
+          ],
+          [
+            "s_star",
+            0.4,
+            9.252029458210519,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 11.10% >= 5%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 30,
+          "beta_hyst": 1.0
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.6
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 10.240302881774985,
+        "final_rmse": 5.700012355965162,
+        "baseline_metrics": {
+          "overall": 10.240302881774985,
+          "wet": 4.849335192919915,
+          "dry": 14.359562595915582,
+          "dry_cool": 12.815453626492333
+        },
+        "final_metrics": {
+          "overall": 5.700012355965162,
+          "wet": 4.448645603709535,
+          "dry": 6.738600085471008,
+          "dry_cool": 6.656140933425926
+        },
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            3.9724379981281386,
+            "wet"
+          ],
+          [
+            "courant_number",
+            0.5,
+            8.667057466612647,
+            "overall"
+          ],
+          [
+            "n_trapz",
+            30,
+            8.074621551952154,
+            "overall"
+          ],
+          [
+            "beta_hyst",
+            1.0,
+            6.683571174942878,
+            "dry_cool"
+          ],
+          [
+            "ICratio_min",
+            0.3,
+            7.308895927412757,
+            "wet"
+          ],
+          [
+            "courant_number",
+            0.3,
+            5.663043656565406,
+            "overall"
+          ],
+          [
+            "ICratio_min",
+            0.6,
+            4.091634421727715,
+            "wet"
+          ],
+          [
+            "s_star",
+            0.4,
+            6.738600085471008,
+            "dry"
+          ]
+        ],
+        "note": "accepted: net 44.34% >= 5%"
+      }
+    }
+  }
+}

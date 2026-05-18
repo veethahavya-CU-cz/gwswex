@@ -1,0 +1,70 @@
+[workspace]
+name = "gwswex"
+channels = ["conda-forge"]
+platforms = ["win-64", "osx-arm64", "osx-64", "linux-64", "linux-aarch64"]
+
+# ── base dependencies (all environments) ─────────────────────────────────────
+[dependencies]
+python    = ">=3.11.15,<3.15"
+gfortran  = ">=15.2.0,<15.3"
+gxx       = ">=15.2.0,<15.3"
+meson     = ">=1.11.1,<2"
+ninja     = ">=1.13.2,<2"
+pkg-config = ">=0.29.2,<0.30"
+meson-python = ">=0.19.0,<0.20"
+pip       = ">=26.1.1,<27"
+wheel     = ">=0.47.0,<0.48"
+setuptools = ">=82.0.1,<83"
+numpy    = ">=2.4.3,<3"
+netcdf4  = ">=1.7.4,<2"
+pydantic = ">=2.13.4,<3"
+psutil   = ">=7.2.2,<8"
+matplotlib = ">=3.10.9,<4"
+
+# ── dev extras (default environment) ─────────────────────────────────────────
+[feature.dev.dependencies]
+pytest     = ">=9.0.3,<10"
+pytest-cov = ">=7.1.0,<8"
+black      = ">=26.1.0,<27"
+mypy       = ">=1.20.2,<2"
+jupytext   = ">=1.19.2,<2"
+ipykernel  = ">=7.2.0,<8"
+pandas     = ">=3.0.2,<4"
+
+# ── per-Python-version environments (for CI matrix) ──────────────────────────
+[feature.py311.dependencies]
+python     = ">=3.11.15,<3.12"
+pytest     = ">=9.0.3,<10"
+pytest-cov = ">=7.1.0,<8"
+
+[feature.py312.dependencies]
+python     = ">=3.12.0,<3.13"
+pytest     = ">=9.0.3,<10"
+pytest-cov = ">=7.1.0,<8"
+
+[feature.py313.dependencies]
+python     = ">=3.13.0,<3.14"
+pytest     = ">=9.0.3,<10"
+pytest-cov = ">=7.1.0,<8"
+
+[feature.py314.dependencies]
+python     = ">=3.14.0,<3.15"
+pytest     = ">=9.0.3,<10"
+pytest-cov = ">=7.1.0,<8"
+
+# ── environment declarations ──────────────────────────────────────────────────
+[environments]
+default = { features = ["dev"], solve-group = "default" }
+py311   = { features = ["py311"], solve-group = "py311" }
+py312   = { features = ["py312"], solve-group = "py312" }
+py313   = { features = ["py313"], solve-group = "py313" }
+py314   = { features = ["py314"], solve-group = "py314" }
+
+# ── tasks ─────────────────────────────────────────────────────────────────────
+[tasks]
+build       = "meson setup build && meson compile -C build && pip install -e . --no-build-isolation -Cbuilddir=build"
+quick-build = "meson compile -C build && pip install -e . --no-build-isolation -Cbuilddir=build"
+debug-build = "meson setup build-debug --buildtype=debug && meson compile -C build-debug && pip install -e . --no-build-isolation -Cbuilddir=build-debug -Csetup-args=-Dbuildtype=debug -Csetup-args=-Db_ndebug=false"
+install     = "meson setup build && meson compile -C build && pip install . --no-build-isolation -Cbuilddir=build"
+test        = "pytest tests/ -v"
+clean       = "python scripts/clean.py"

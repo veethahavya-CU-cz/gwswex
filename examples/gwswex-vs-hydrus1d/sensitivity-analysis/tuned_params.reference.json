@@ -1,0 +1,728 @@
+{
+  "loam": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.5
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.4
+        },
+        "baseline_rmse": 0.964143,
+        "final_rmse": 0.636343,
+        "accepted": [
+          [
+            "s_star",
+            0.7,
+            0.689512
+          ],
+          [
+            "s_w",
+            0.2,
+            0.656476
+          ],
+          [
+            "s_e",
+            0.4,
+            0.636343
+          ]
+        ],
+        "note": "accepted: net 34.00% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.5,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.6
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 2.090673,
+        "final_rmse": 1.780156,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            1.997147
+          ],
+          [
+            "s_star",
+            0.7,
+            1.780156
+          ]
+        ],
+        "note": "accepted: net 14.85% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.1
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 43.056424,
+        "final_rmse": 43.056424,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.95,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.1
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 29.97871,
+        "final_rmse": 29.97871,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "sand": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.2
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.05,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.561982,
+        "final_rmse": 0.53217,
+        "accepted": [
+          [
+            "s_w",
+            0.05,
+            0.53217
+          ]
+        ],
+        "note": "accepted: net 5.30% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.9,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.2
+        },
+        "et_stress": {
+          "s_star": 0.3,
+          "s_w": 0.05,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.539999,
+        "final_rmse": 0.36403,
+        "accepted": [
+          [
+            "s_star",
+            0.3,
+            0.434518
+          ],
+          [
+            "s_w",
+            0.05,
+            0.36403
+          ]
+        ],
+        "note": "accepted: net 32.59% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 14.144854,
+        "final_rmse": 14.144854,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.9,
+          "n_trapz": 20,
+          "beta_hyst": 0.85
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 13.9095,
+        "final_rmse": 13.9095,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      }
+    }
+  },
+  "clay": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.42
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 32.48834,
+        "final_rmse": 32.48834,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 2%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.95,
+          "n_trapz": 30,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 54.820496,
+        "final_rmse": 34.683396,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.05,
+            34.683396
+          ]
+        ],
+        "note": "accepted: net 36.73% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 300
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 63.142232,
+        "final_rmse": 63.142232,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.9,
+          "n_trapz": 40,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 62.153883,
+        "final_rmse": 58.825595,
+        "accepted": [
+          [
+            "n_trapz",
+            40,
+            58.825595
+          ]
+        ],
+        "note": "accepted: net 5.35% >= 5%"
+      }
+    }
+  },
+  "sand-loam": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.3
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.05,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.594646,
+        "final_rmse": 0.57163,
+        "accepted": [
+          [
+            "s_w",
+            0.05,
+            0.57163
+          ]
+        ],
+        "note": "accepted: net 3.87% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.2
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.530668,
+        "final_rmse": 0.472766,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.2,
+            0.488065
+          ],
+          [
+            "n_trapz",
+            10,
+            0.472766
+          ]
+        ],
+        "note": "accepted: net 10.91% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-06,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 12.272965,
+        "final_rmse": 12.272965,
+        "accepted": [],
+        "note": "net improvement 0.00% < threshold 5%; reverting to baseline"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 5,
+          "beta_hyst": 0.85
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.5
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 12.824152,
+        "final_rmse": 10.604522,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.5,
+            10.604522
+          ]
+        ],
+        "note": "accepted: net 17.31% >= 5%"
+      }
+    }
+  },
+  "sand-clay": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.4,
+          "s_w": 0.1,
+          "s_h": 0.08,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.196033,
+        "final_rmse": 0.190961,
+        "accepted": [
+          [
+            "s_h",
+            0.08,
+            0.190961
+          ]
+        ],
+        "note": "accepted: net 2.59% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.9,
+          "n_trapz": 10,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 0.263763,
+        "final_rmse": 0.237876,
+        "accepted": [
+          [
+            "s_star",
+            0.7,
+            0.248917
+          ],
+          [
+            "s_w",
+            0.2,
+            0.237876
+          ]
+        ],
+        "note": "accepted: net 9.81% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 1.298675,
+        "final_rmse": 1.092477,
+        "accepted": [
+          [
+            "s_star",
+            0.7,
+            1.215804
+          ],
+          [
+            "s_w",
+            0.2,
+            1.092477
+          ]
+        ],
+        "note": "accepted: net 15.88% >= 5%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.7,
+          "n_trapz": 10,
+          "beta_hyst": 0.85
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.6
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 8.247783,
+        "final_rmse": 5.452722,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            5.775138
+          ],
+          [
+            "s_w",
+            0.2,
+            5.452722
+          ]
+        ],
+        "note": "accepted: net 33.89% >= 5%"
+      }
+    }
+  },
+  "loam-clay": {
+    "basic": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 1e-07,
+          "picard_max_iter": 300,
+          "beta_hyst": 1,
+          "n_trapz": 20
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.3
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.2,
+          "s_h": 0.05,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 0.441664,
+        "final_rmse": 0.29127,
+        "accepted": [
+          [
+            "s_star",
+            0.7,
+            0.325107
+          ],
+          [
+            "s_w",
+            0.2,
+            0.30915
+          ],
+          [
+            "s_e",
+            0.6,
+            0.29127
+          ]
+        ],
+        "note": "accepted: net 34.05% >= 2%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.95,
+          "n_trapz": 20,
+          "beta_hyst": 1
+        },
+        "model_params": {
+          "psi_f": 0.01,
+          "F_min": 1e-07,
+          "ICratio_min": 0.6
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.3
+        },
+        "baseline_rmse": 1.687431,
+        "final_rmse": 0.929865,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.6,
+            1.100203
+          ],
+          [
+            "s_star",
+            0.7,
+            0.929865
+          ]
+        ],
+        "note": "accepted: net 44.89% >= 2%"
+      }
+    },
+    "intensive": {
+      "implicit": {
+        "solver_params": {
+          "picard_tol": 0.0001,
+          "picard_max_iter": 150
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.2
+        },
+        "et_stress": {
+          "s_star": 0.7,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.6
+        },
+        "baseline_rmse": 5.833898,
+        "final_rmse": 5.129629,
+        "accepted": [
+          [
+            "s_star",
+            0.7,
+            5.457888
+          ],
+          [
+            "s_e",
+            0.6,
+            5.129629
+          ]
+        ],
+        "note": "accepted: net 12.07% >= 5%"
+      },
+      "explicit": {
+        "solver_params": {
+          "courant_number": 0.3,
+          "n_trapz": 10,
+          "beta_hyst": 0.9
+        },
+        "model_params": {
+          "psi_f": 0.09,
+          "F_min": 1e-06,
+          "ICratio_min": 0.05
+        },
+        "et_stress": {
+          "s_star": 0.5,
+          "s_w": 0.1,
+          "s_h": 0.05,
+          "s_e": 0.5
+        },
+        "baseline_rmse": 5.09733,
+        "final_rmse": 4.224124,
+        "accepted": [
+          [
+            "ICratio_min",
+            0.05,
+            4.224124
+          ]
+        ],
+        "note": "accepted: net 17.13% >= 5%"
+      }
+    }
+  }
+}

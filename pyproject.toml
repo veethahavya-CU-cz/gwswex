@@ -1,0 +1,31 @@
+# Build system: meson-python bridges pip/build with Meson.
+# numpy is required at build time so f2py can generate C glue code.
+[build-system]
+requires = ["meson-python", "numpy"]
+build-backend = "mesonpy"
+
+[project]
+name = "gwswex"
+version = "1.0.0"
+description = "Groundwater-Vadose-Surface Water Exchange (GWSWEX) model"
+requires-python = ">=3.11"
+dependencies = ["numpy", "pydantic>=2.6", "netCDF4", "psutil"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "black", "mypy", "jupytext"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_configs = true
+warn_return_any = true
+ignore_missing_imports = true
+no_implicit_optional = true
+strict_equality = true

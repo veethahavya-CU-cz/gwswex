@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "../.pixi/envs/default/bin/python",
+  "files.exclude": {
+    "**/.mypy_cache": true,
+    "**/__pycache__": true,
+    ".vscode/": true,
+    ".mod_cache/": true
+  }
+}

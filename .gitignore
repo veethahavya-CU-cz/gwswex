@@ -1,0 +1,60 @@
+# Build artifacts
+build/
+build-debug/
+dist/
+*.egg-info/
+*.so
+*.dylib
+*.dll
+*.mod
+*.smod
+*.obj
+*.o
+*.pyd
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.ruff_cache/
+
+# Test artifacts
+.pytest_cache/
+.coverage
+*.log
+
+# Fortran module cache (linter)
+.mod_cache/
+
+# Virtual envs
+.venv/
+venv/
+
+# Pixi
+.pixi/
+pixi.lock
+
+# Config
+mypy.ini
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Project Specific
+**/.archive/
+**/outputs/
+**/temp_diagnostics/
+examples/gwswex-vs-hydrus1d/hydrus1d/bin/hydrus
+
+# Stray model outputs at repo root (test/debug runs that escape tmp_path)
+/*.nc
+
+# GenAI
+**/.agent/
+.github/agents/
+.github/copilot-instructions.md

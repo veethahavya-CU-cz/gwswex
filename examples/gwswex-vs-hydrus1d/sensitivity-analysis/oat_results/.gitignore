@@ -1,0 +1,5 @@
+# Transient OAT artefacts -- regenerated on each harness run
+tmp/
+cache/
+validation_logs/
+*.log

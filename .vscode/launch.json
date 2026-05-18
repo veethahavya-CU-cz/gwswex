@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python + C++/Fortran (gwswex)",
+      "type": "pythoncpp",
+      "request": "launch",
+      "pythonLaunchName": "Python: run_demo.py",
+      "cppAttachName": "(lldb) Attach"
+    },
+    {
+      "name": "(lldb) Attach",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "${workspaceFolder:gwswex-root}/examples/run_demo.py",
+      "processId": "${command:pickProcess}",
+      "MIMode": "lldb"
+    },
+    {
+      "name": "Python: run_demo.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder:gwswex-root}/examples/run_demo.py",
+      "cwd": "${workspaceFolder:gwswex-root}",
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "preLaunchTask": "$(debug) Debug Build",
+      "envFile": "${workspaceFolder:gwswex-root}/.env.d/dev.env"
+    }
+  ]
+}

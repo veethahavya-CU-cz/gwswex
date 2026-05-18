@@ -1,0 +1,28 @@
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "black-formatter.args": ["--line-length", "120"],
+  "mypy-type-checker.importStrategy": "useBundled",
+
+  "files.exclude": {
+    "**/.git": true,
+    ".pixi": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/__pycache__": true,
+    "**/.ipynb_checkpoints": true,
+    "**/*.egg-info": true
+  },
+  "search.exclude": {
+    "**/.mypy_cache": true,
+    "**/.pixi": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "build": true,
+    "build-debug": true
+  },
+  "explorer.excludeGitIgnore": false
+}

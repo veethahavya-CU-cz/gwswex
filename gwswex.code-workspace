@@ -1,0 +1,98 @@
+{
+  "folders": [
+    {
+        "path": "gwswex/",
+        "name": "gwswex-src"
+    },
+    {
+        "path": "docs/",
+        "name": "gwswex-docs"
+    },
+    {
+        "path": "examples/",
+        "name": "examples"
+    },
+    {
+      "path": ".",
+      "name": "gwswex-root"
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": ".pixi/envs/default/bin/python",
+    "python-envs.workspaceSearchPaths": [".pixi/envs/*"],
+    "C_Cpp.default.compileCommands": "${workspaceFolder:gwswex-root}/build/compile_commands.json",
+
+    // Fortran linter: gfortran writes .mod files into .mod_cache/ during
+    // linting (-J) and reads them back (-I) so module dependencies resolve.
+    // These MUST live at workspace scope -- the extension uses window-scoped
+    // settings which are ignored at folder level in a multi-root workspace.
+    "fortran.linter.compiler": "gfortran",
+    "fortran.linter.modOutput": "${workspaceFolder:gwswex-src}/.mod_cache",
+    "fortran.linter.includePaths": [
+      "${workspaceFolder:gwswex-src}/.mod_cache",
+      "${workspaceFolder:gwswex-root}/build/f_gwswex.cpython-314-darwin.so.p",
+      "${workspaceFolder:gwswex-root}/build/libgwswex_core.a.p"
+    ],
+    "fortran.linter.extraArgs": [
+      "-I${workspaceFolder:gwswex-src}/.mod_cache",
+      "-I${workspaceFolder:gwswex-root}/build/f_gwswex.cpython-314-darwin.so.p",
+      "-I${workspaceFolder:gwswex-root}/build/libgwswex_core.a.p"
+    ],
+    "fortran.fortls.directories": [
+      "${workspaceFolder:gwswex-src}/**"
+    ],
+    "fortran.fortls.excludeDirectories": [
+      "${workspaceFolder:gwswex-root}/build/**",
+      "${workspaceFolder:gwswex-root}/build-debug/**"
+    ],
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "[python]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[fortran]": {
+      "editor.wordWrap": "off"
+    },
+    "chat.tools.terminal.autoApprove": {
+      "conda": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.debugpy",
+      "ms-python.black-formatter",
+      "ms-python.mypy-type-checker",
+      "ms-vscode.cpptools",
+      "ms-vscode.cpp-devtools",
+      "benjamin-simmonds.pythoncpp-debug",
+      "fortran-lang.linter-gfortran",
+      "editorconfig.editorconfig",
+      "tamasfe.even-better-toml",
+      "ms-toolsai.jupyter",
+      "ms-toolsai.jupyter-renderers",
+      "gruntfuggly.todo-tree",
+      "streetsidesoftware.code-spell-checker",
+      "ms-toolsai.datawrangler",
+      "mkxml.vscode-filesize",
+      "ms-vscode.hexeditor",
+      "yzhang.markdown-all-in-one",
+      "bierner.markdown-checkbox",
+      "bierner.markdown-footnotes",
+      "bierner.markdown-preview-github-styles",
+      "bierner.markdown-mermaid",
+      "bierner.markdown-yaml-preamble",
+      "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+      "mechatroner.rainbow-csv",
+      "tomoki1207.pdf"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  }
+}
