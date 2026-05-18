@@ -1,6 +1,7 @@
 # GWSWEX — Groundwater–Vadose–Surface-Water Exchange Model
 
 [![CI](https://github.com/veethahavya-CU-cz/gwswex/actions/workflows/ci.yml/badge.svg)](https://github.com/veethahavya-CU-cz/gwswex/actions/workflows/ci.yml)
+[![DOI](https://zenodo.org/badge/1242288218.svg)](https://zenodo.org/badge/latestdoi/1242288218)
 
 A field-scale, column-based vadose zone model with two numerical solvers,
 mass-conserving numerics, and a clean Python API.
@@ -94,7 +95,7 @@ print(f"Final GW head: {state['GWH'][0]:.3f} m")
 model.deinit()
 ```
 
-See [`examples/demo.py`](examples/demo.py) for the full annotated example.
+See [`examples/demo-implicit/demo-implicit.py`](examples/demo-implicit/demo-implicit.py) or [`examples/demo-explicit/demo-explicit.py`](examples/demo-explicit/demo-explicit.py) for annotated examples.
 
 ---
 
@@ -186,7 +187,7 @@ value.
 | `courant_number`  | `0.9`        | explicit            | CFL safety factor for adaptive sub-stepping                          |
 | `n_trapz`         | `20`         | explicit            | Trapezoidal-rule sub-intervals for VG ePV integral                   |
 | `beta_hyst`       | `1.0`        | explicit            | Hysteresis blend factor for $K_{\text{unsat}}$                       |
-| `h_min`           | `−10`        | both                | Pressure-head clamp for VG/Mualem evaluation `[L]`                   |
+| `h_min`           | `-1e6`       | both                | Pressure-head clamp for VG/Mualem evaluation `[L]`                   |
 | `picard_tol`      | `1e-6`       | implicit            | Picard convergence tolerance on $\|\Delta h\|_\infty$ `[L]`          |
 | `picard_max_iter` | `100`        | implicit            | Maximum Picard iterations per macro-step                             |
 
@@ -258,6 +259,7 @@ rebuilding the whole forcing block:
 | `update_lateral_fluxes(gw, sw)`                 | Alias for `set_lateral`, provided for symmetry with the other `update_*` methods           |
 | `update_forcing(t, **kwargs)`                   | Overwrites stored `precip`/`pet`/`ptt`/`lat_gw`/`lat_sw` at step index `t` in place        |
 | `update_is_root(is_root)`                       | Pushes a new `(nl, ne)` binary root mask (int32) to the kernel; no-op if mask unchanged    |
+| `switch_solver(**kwargs)`                        | Switch between `"explicit"` and `"implicit"` solvers mid-simulation with warm-start; accepts `warm_start={"proxy","cold","manual"}`, `icratio_init`, `f_ga_init`, and any `SolverConfig` kwargs |
 | `step(dt, precip, pet, ptt)`                    | Low-level: advance one macro-step bypassing the stored forcing entirely                    |
 
 ### State and diagnostics
@@ -325,11 +327,14 @@ and/or `update_forcing(t, ...)` immediately before each `run_step(t)` call.
 gwswex/                Python package + Fortran sources
   __init__.py          Public re-exports
   config.py            Pydantic configuration models
-  model.py             GWSWEXmodel class (lifecycle, stepping, state access)
+  coupler.py           BMI / coupling scaffolding (forward-looking placeholder)
   io.py                NetCDF writer/reader
+  model.py             GWSWEXmodel class (lifecycle, stepping, state access)
+  version.py           Package version introspection
   wrapper.f90          f2py interface
   src/
     kernel.f08         Model singleton, lifecycle, stepping loop
+    kernel_bmi.f08     BMI-compatible kernel interface
     shared/            constants, types, physics, geometry, lateral,
                        mass_balance
     explicit/          processes, timestep, solver (operator-split cascade)
@@ -337,13 +342,15 @@ gwswex/                Python package + Fortran sources
 docs/
   model-physics.md     Governing equations, numerical formulation
   model-arch.md        Software architecture
-  issues.md            Known limitations and open issues
+  todo.md              Known limitations and open items
 examples/
-  demo.py              Annotated single-column demo
-  gwswex-vs-hydrus1d/  HYDRUS-1D comparison notebook
+  demo-explicit/       Explicit-solver annotated demo
+  demo-implicit/       Implicit-solver annotated demo
+  gwswex-vs-hydrus1d/  HYDRUS-1D comparison notebooks
 tests/
   test_api.py          Python API unit tests (Pydantic validators, broadcasting)
   test_kernel.py       Fortran kernel integration tests (both solvers)
+  test_omp.py          OpenMP parallelism tests
   test_physics.py      Constitutive-function unit tests
 .archive/
   model-diagnosis/     Archived V1–V9 diagnostic workspace
@@ -374,8 +381,8 @@ tests/
 ## Continuous Integration
 
 The GWSWEX test suite runs automatically on every push to `main` and on all pull
-requests via GitHub Actions. Builds test against Python 3.11, 3.12, and 3.13 on
-Ubuntu with the latest gfortran.
+requests via GitHub Actions. Builds test against Python 3.11, 3.12, 3.13, and 3.14
+on Ubuntu with the latest gfortran.
 
 **Build status:** See the
 [Actions tab](https://github.com/veethahavya-CU-cz/gwswex/actions/workflows/ci.yml)
@@ -388,7 +395,7 @@ source .env.d/dev.env
 python -m pytest tests/ -v
 ```
 
-All 150 tests must pass before changes are merged to `main`.
+All 147 tests must pass before changes are merged to `main`.
 
 ---
 
